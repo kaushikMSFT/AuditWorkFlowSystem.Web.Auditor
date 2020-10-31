@@ -1,0 +1,8 @@
+<input
+      style="display: none"
+      type="file"
+      #fileInput
+      multiple="multiple"
+      (change)="onSelected($event.target.files)"
+    />
+    <button (click)="showFileDialog()">Click here to Upload File</button>

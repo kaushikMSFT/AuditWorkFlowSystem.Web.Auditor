@@ -1,0 +1,27 @@
+<table class="table">
+<thead>
+    <tr>
+        <th>AuditCode</th>
+        <th>Description</th>
+        <th>AuditingFirm</th>
+        <th>ClientFirm</th>
+        <th>AuditReleaseDate </th>
+        
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let audit of audits">
+        <td>{{ audit.AuditCode}}</td>
+        <td> {{ audit.Description}}</td>
+        <td>{{ audit.AuditorFirm}}</td>
+        <td>{{audit.ClientFirm}}</td>
+        <td>{{audit.ReleaseDate}}</td>
+        
+        <td><a [routerLink]="['/audits/audit',audit.AuditCode]">Edit</a></td>
+    </tr>
+    <tr>
+        <td colspan="6"><a routerLink="/audits/audit/new" class="btn btn-primary">Create New AuditPortfolio</a></td>
+    </tr>
+</tbody>
+</table>

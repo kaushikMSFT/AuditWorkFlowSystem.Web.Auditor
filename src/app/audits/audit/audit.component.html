@@ -1,0 +1,36 @@
+<form #form="ngForm" (ngSubmit)="SaveAudit()">
+    <div class="form-group">
+      <label for="auditor">AuditorFirm:</label>
+      <input type="text" [(ngModel)]="formData.AuditorFirm" name="AuditorFirm" class="form-control" id="AuditorFirm">
+    </div>
+    <div class="form-group">
+      <label for="Desciption">Description:</label>
+      <input type="text" [(ngModel)]="formData.Description" name="Description" class="form-control" id="AuditorFirm">
+    </div>
+    <div class="form-group">
+        <label for="Client">ClientFirm:</label>
+        <input type="text" [(ngModel)]="formData.ClientFirm" name="ClientFirm" class="form-control" id="ClientFirm">
+        <!-- <select id="ClientFirm" class="form-control" >
+          
+          <option [value]=clientFirm.ClientFirmCode *ngFor="let clientFirm of clientFirms  ">{{clientFirm.Name}}</option>
+        </select> -->
+      </div>
+      <div class="form-group">
+        <app-file-upload #fileupload ></app-file-upload>
+        <!-- <div
+        class="progress-bar progress-bar-info progress-bar-striped"
+        role="progressbar"
+        attr.aria-valuenow="{{ progress }}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngStyle]="{ width: progress + '%' }"
+      >
+        {{ progress }}%
+      </div> -->
+      <div *ngIf="this.uploadInProgress==true">Uploading..Please wait..</div>
+      </div>
+      <div>Document:
+      <a [routerLink]="" (click)="download(this.formData.Document?.Name)" >{{this.formData.Document?.Name}}</a>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

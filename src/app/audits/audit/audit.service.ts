@@ -13,7 +13,7 @@ import { AuditDocument } from '../../shared/audit-document.model';
 })
 export class AuditService {
   baseUrl_document="https://documentapiv1.azurewebsites.net"//"https://localhost:5007";
-  baseUrl_audit = "https://localhost:5005";//https://auditorapiv1.azurewebsites.net";//"https://localhost:5005";
+  baseUrl_audit = "https://auditorapiv1.azurewebsites.net";//"https://localhost:5005";
   //https://auditorapi20201026183324.azurewebsites.net/api/auditportfolio
   constructor(private httpService: HttpClient) { }
   //formData : AuditPortfolio
